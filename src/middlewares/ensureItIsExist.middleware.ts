@@ -29,6 +29,7 @@ const ensureItIsExistMiddleware =
       if (!find) {
         throw new AppError("Not found", 404);
       }
+      
       return next();
     }
 
