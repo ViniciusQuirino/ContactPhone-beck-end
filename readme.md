@@ -17,20 +17,14 @@ yarn version  1.22.5 ou superior
 nodeJs 16.19.0 ou superior
 ```
 
-
 ## 🛠️ Construído com
 
-* [TypeScript]() - linguagem de programção 
-* [Express]() - Framework web
-* [Postegresql]() - Banco de dados
-
-
+- [TypeScript]() - linguagem de programção
+- [Express]() - Framework web
+- [Postegresql]() - Banco de dados
 
 ## 📌 Versão 1.0.0
 
 ## ✒️ Autor
 
-* **Vinicius Quirino** - *Desenvolvedor* - [Linkedin](https://www.linkedin.com/in/viniciusquirino/)
-
----
-⌨️ com ❤️ por [Vinicius ](https://www.linkedin.com/in/viniciusquirino/) 😊
+- **Vinicius Quirino** - _Desenvolvedor_ - [Linkedin](https://www.linkedin.com/in/viniciusquirino/)
