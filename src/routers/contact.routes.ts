@@ -5,7 +5,7 @@ import listContactController from "../controllers/contact/listContact.controller
 import updateContactController from "../controllers/contact/updateContact.controller";
 import { Contact } from "../entities/contact.entities";
 import ensureAuthMiddleware from "../middlewares/ensureAuth.middlewares";
-import { ensureDataIsValidMiddleware } from "../middlewares/ensureDataIsValid.middlewares";
+import { ensureDataIsValidMiddleware, ensureUpdateDataIsValidMiddleware } from "../middlewares/ensureDataIsValid.middlewares";
 import ensureItIsExistMiddleware from "../middlewares/ensureItIsExist.middleware";
 import FindPhoneAndEmailMiddlewares from "../middlewares/FindPhoneAndEmail.middlewares";
 import phoneNumberValidationMiddleware from "../middlewares/phoneNumberValidation.middlewares";
@@ -27,6 +27,7 @@ contactRoutes.patch(
   "/:id",
   ensureAuthMiddleware,
   ensureItIsExistMiddleware(Contact),
+  ensureUpdateDataIsValidMiddleware(contactRequestSchema),
   phoneNumberValidationMiddleware,
   updateContactController
 );

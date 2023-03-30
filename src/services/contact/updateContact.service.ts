@@ -8,6 +8,8 @@ const updateContactService = async (
   contactData: IContactUpdateRequest,
   contactId: string
 ): Promise<IContactResponse> => {
+  console.log(contactData);
+  console.log(contactId);
   const contactRepository: Repository<Contact> =
     AppDataSource.getRepository(Contact);
 

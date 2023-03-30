@@ -12,6 +12,8 @@ const FindPhoneAndEmailMiddlewares = async (
   const contactRepository: Repository<Contact> =
     AppDataSource.getRepository(Contact);
 
+  console.log(req.body.email);
+
   if (req.body.email) {
     const findPhone: Contact = await contactRepository.findOneBy({
       telefone: req.body.telefone,
@@ -27,15 +29,23 @@ const FindPhoneAndEmailMiddlewares = async (
     if (findEmail) {
       throw new AppError("There is already a contact with this email", 403);
     }
-  }
-  const findPhone: Contact = await contactRepository.findOneBy({
-    telefone: req.body.telefone,
-  });
+  } else if (req.body.email == undefined) {
+    const findName: Contact = await contactRepository.findOneBy({
+      name: req.body.name,
+    });
 
-  if (findPhone) {
-    throw new AppError("There is already a contact with this phone", 403);
-  }
+    if (findName) {
+      throw new AppError("There is already a contact with this phone", 403);
+    }
 
+    const findPhone: Contact = await contactRepository.findOneBy({
+      telefone: req.body.telefone,
+    });
+
+    if (findPhone) {
+      throw new AppError("There is already a contact with this phone", 403);
+    }
+  }
   return next();
 };
 

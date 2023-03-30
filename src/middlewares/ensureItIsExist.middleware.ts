@@ -19,7 +19,9 @@ const ensureItIsExistMiddleware =
       if (!find) {
         throw new AppError("Not found", 404);
       }
+      return next();
     } else if (entity == Contact) {
+      console.log(req.params.id);
       const find: User | Contact = await entityRepository.findOneBy({
         id: req.params.id,
       });
@@ -27,6 +29,7 @@ const ensureItIsExistMiddleware =
       if (!find) {
         throw new AppError("Not found", 404);
       }
+      return next();
     }
 
     return next();

@@ -5,14 +5,14 @@ import { IContactRequest, IContactResponse } from "../interfaces";
 
 const contactRequestSchema: SchemaOf<IContactRequest> = yup.object().shape({
   name: yup.string().required("Name required"),
-  email: yup.string().email().notRequired(),
+  email: yup.string().email().notRequired().nullable(),
   telefone: yup.string().required("Phone required"),
 });
 
 const contactResponseSchema: SchemaOf<IContactResponse> = yup.object().shape({
   id: yup.string().required(),
   name: yup.string().required("Name required"),
-  email: yup.string().email().notRequired(),
+  email: yup.string().email().notRequired().nullable(),
   telefone: yup.string().required("Phone required"),
   createdAt: yup.date(),
 });

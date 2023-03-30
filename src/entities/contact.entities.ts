@@ -13,7 +13,7 @@ class Contact {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ length: 50, unique: true, nullable: true })
+  @Column({ length: 50, nullable: true })
   email: string;
 
   @Column({ length: 50})
