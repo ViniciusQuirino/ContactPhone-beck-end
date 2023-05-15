@@ -1,4 +1,4 @@
-# Api - TreeNetwork
+# Api - ContactPhone
 
 Este é o backend da aplicação ContactPhone - Uma API desenvolvida por Vinicius Quirino, estudante do curso Kenzie Academy Brasil! O objetivo dessa aplicação é organizar todos os contatos em um unico só lugar.
 
